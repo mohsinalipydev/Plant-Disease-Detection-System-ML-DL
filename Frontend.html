@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plant Disease Detection</title>
+        <style>
+           body {
+    background-image: url("https://images6.alphacoders.com/134/1347850.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000; /* Fallback color */
+
+    text-align: center;
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+            h1 {
+                margin-bottom: 20px;
+            }
+
+            .form-box {
+                background: rgba(250, 255, 224, 0.2);
+                border-radius: 10px;
+                backdrop-filter: blur(8px);
+                padding: 40px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                max-width: 400px;
+                margin: 50px auto;
+                text-align: center;
+                color: #333;
+            }
+
+            input[type="file"] {
+                margin: 20px 0;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #f0f0f0;
+                cursor: pointer;
+            }
+
+            button {
+                background-color: #5cb85c;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: #4cae4c;
+            }
+
+            #result img {
+    margin-top: 20px;
+    max-width: 200px; /* Increase this as needed */
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="form-box">
+            <h1>Plant Disease Detection</h1>
+
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required id="imgpp" onchange="getImagePreview(event)">
+                <button type="submit">Detect Disease</button>
+            </form>
+
+            <div id="result"></div>
+
+         <script type="text/javascript">
+    const form = document.querySelector('form');
+    const resultDiv = document.getElementById('result');
+
+    form.onsubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        // Reset result area
+        resultDiv.innerHTML = "";
+
+        // Get uploaded image and show preview
+        const imageFile = document.getElementById("imgpp").files[0];
+        const previewImg = document.createElement("img");
+        previewImg.src = URL.createObjectURL(imageFile);
+        previewImg.alt = "Preview Image";
+        resultDiv.appendChild(previewImg);
+
+        // Call Flask backend for prediction
+        const response = await fetch('/predict', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+        const predictionText = document.createElement("h3");
+
+        if (result.prediction && result.prediction !== "Undefined") {
+            predictionText.innerText = "Detect: " + result.prediction;
+            predictionText.style.color = "white";
+        } else {
+            predictionText.innerText = "Prediction: Undefined (No clear plant disease found)";
+            predictionText.style.color = "red";
+        }
+
+        resultDiv.appendChild(predictionText);
+    };
+
+    function getImagePreview(event) {
+        const image = URL.createObjectURL(event.target.files[0]);
+        const imageDiv = document.getElementById("result");
+        const newImg = document.createElement("img");
+        imageDiv.innerHTML = '';
+        newImg.src = image;
+        imageDiv.appendChild(newImg);
+    }
+</script>
+
+        </div>
+    </body>
+</html>
