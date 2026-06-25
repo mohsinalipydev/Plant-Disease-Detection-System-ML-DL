@@ -1,11 +1,11 @@
-Cotton Plant Disease Detection System
+# Cotton Plant Disease Detection System
 
 
 An AI-powered web-based system for automated cotton leaf disease detection using the EfficientNetV2 Deep Learning model. The system analyzes cotton leaf images and predicts whether the plant is healthy or affected by a disease, helping farmers and agricultural experts identify diseases at an early stage.
 
 ---
 
-Project Overview
+## Project Overview
 
 Cotton is one of the most important cash crops worldwide. Diseases affecting cotton plants can significantly reduce crop yield and quality. Traditional disease diagnosis requires expert knowledge and manual inspection, which can be time-consuming and costly.
 
@@ -15,7 +15,7 @@ The system is deployed as a web application using Flask, allowing users to uploa
 
 ---
 
-Objectives
+## Objectives
 
 The main objectives of this project are:
 
@@ -27,7 +27,7 @@ The main objectives of this project are:
 
 ---
 
-Key Features
+## Key Features
 
 ### Deep Learning Features
 
@@ -48,7 +48,7 @@ Key Features
 
 ---
 
-Machine Learning Model
+## Machine Learning Model
 
 ### Model Used
 
@@ -66,7 +66,7 @@ EfficientNetV2 is a state-of-the-art Convolutional Neural Network architecture d
 
 ---
 
-# 🛠 Technologies Used
+## Technologies Used
 
 ## Programming Language
 
@@ -109,7 +109,7 @@ EfficientNetV2 is a state-of-the-art Convolutional Neural Network architecture d
 
 ---
 
-Project Structure
+## Project Structure
 
 ```text
 Cotton-Disease-Detection-System/
@@ -137,7 +137,7 @@ Cotton-Disease-Detection-System/
 
 ---
 
-System Workflow
+## System Workflow
 
 ```text
 Cotton Leaf Image
@@ -157,7 +157,7 @@ Prediction Result
 
 ---
 
-Dataset Preparation
+## Dataset Preparation
 
 The dataset consists of cotton leaf images categorized into different classes.
 
@@ -182,7 +182,7 @@ These techniques improve model generalization and reduce overfitting.
 
 ---
 
-Model Training
+## Model Training
 
 The model training process includes:
 
@@ -220,7 +220,7 @@ Save best-performing model.
 
 ---
 
-Evaluation Metrics
+## Evaluation Metrics
 
 The model performance is evaluated using:
 
@@ -274,7 +274,7 @@ pip install -r requirements.txt
 
 ---
 
-Run Application
+## Run Application
 
 Deployment
 
@@ -324,7 +324,7 @@ Ngrok generates a public URL that can be used to access the application from any
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ```text
 Cotton Leaf Image
@@ -342,7 +342,7 @@ Prediction Result
 Displayed to User
 ```
 
-Application Usage
+## Application Usage
 
 1. Open the web application.
 2. Upload a cotton leaf image.
@@ -352,7 +352,7 @@ Application Usage
 
 ---
 
-Real-World Applications
+## Real-World Applications
 
 - Smart Agriculture
 - Precision Farming
@@ -363,7 +363,7 @@ Real-World Applications
 
 ---
 
-Future Enhancements
+## Future Enhancements
 
 - Mobile Application Integration
 - Real-Time Camera Detection
@@ -375,7 +375,7 @@ Future Enhancements
 
 ---
 
-Future Scope
+## Future Scope
 
 The project can be extended into a complete Agricultural AI Platform featuring:
 
@@ -388,15 +388,15 @@ The project can be extended into a complete Agricultural AI Platform featuring:
 ---
 
 
-Author
+## Author
 
-Mohsin Ali
+**Mohsin Ali**
 
 Machine Learning Enthusiast | Deep Learning Developer | AI Research Learner
 
 ---
 
-License
+## License
 
 This project is developed for academic and research purposes.
 
