@@ -392,7 +392,7 @@ The project can be extended into a complete Agricultural AI Platform featuring:
 
 **Mohsin Ali**
 
-Machine Learning Enthusiast | Deep Learning Developer | AI Research Learner
+Machine Learning Engineer | Deep Learning Developer | Python Developer
 
 ---
 
