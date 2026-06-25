@@ -391,6 +391,7 @@ The project can be extended into a complete Agricultural AI Platform featuring:
 Author
 
 Mohsin Ali
+
 Machine Learning Enthusiast | Deep Learning Developer | AI Research Learner
 
 ---
